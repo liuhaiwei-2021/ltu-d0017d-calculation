@@ -51,14 +51,14 @@ class Main {
     double finalSunsetHours = 0.0;
     double sunshineHours = 0.0;
 
+    //Enter the date
     System.out.print("Enter today's date [mm-dd]");
-
     Scanner userInputDate = new Scanner(System.in);
     userInputDate.useDelimiter("[-/\\s]");
     month = userInputDate.nextInt();
     day = userInputDate.nextInt();
 
-
+    // Validate date
     if ((month != JUNE) && (month != JULY)) {
       System.out.print("wrong date");
     } else if ((month == JUNE) && (day < DAY_MIN)) {
@@ -84,7 +84,6 @@ class Main {
 
     // Validate sunrise time
     if ((sunriseHours >= HOUR_MIN) && (sunriseHours <= HOUR_MAX) && (sunriseMinutes >= MINUTE_MIN) && (sunriseMinutes <= MINUTE_MAX)) {
-
       finalSunriseHours = Math.round((sunriseHours + sunriseMinutes / MINUTES2HOUR) * scale) / scale;
 
       System.out.print("Enter the time of sunset [hh: mm]");
@@ -104,7 +103,7 @@ class Main {
       System.out.print("wrong time");
     }
 
-    // Validate sunrise is before sun set
+    // Validate sunrise is before sunset
     if (finalSunriseHours > finalSunsetHours) {
       
      System.out.print("Sunrise is after sunset");
@@ -121,6 +120,7 @@ class Main {
     double money = 0.0;
     money = Math.round(production * PRICE * scale) / scale;  
 
+    // print formated data
     System.out.printf("%-40s %n", "=========================================");
     System.out.printf("%-10s %-4s %-5s %n", "Sun hours:", sunshineHours, "hours");
       System.out.printf("%-10s %-2s %-1s %-1s %-4s  %-4s %-10s  %4s %n", "The production on ", day, "/", month, "is: ", production, "kWH to a value of: SEK", money );
