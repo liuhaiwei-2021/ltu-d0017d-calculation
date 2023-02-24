@@ -8,11 +8,11 @@
 * Step 6. Validate the time of sunrise
 * Step 7. Enter the time of sunset
 * Step 8. Validate the time of 
-* Step 9. Caculate the sun hours
-* Step 10. Caculate the production 
+* Step 9. Calculate the sun hours
+* Step 10. Calculate the production 
 * Production (Wh) = Solar radiation (Wh / m2 / hour) x efficiency x 
 * surface (m2) x hours of sunshine
-* Step 11. Caculate money Money = Production / 1000 * price
+* Step 11. Calculate money Money = Production / 1000 * price
 *@Haiwei， haiweiliu
 */
 
@@ -112,12 +112,12 @@ class Main {
       sunshineHours = Math.round((finalSunsetHours - finalSunriseHours)*scale) / scale ;
      }
 
-    //Caculate production, eq 1 above
+    //Calculate production, eq 1 above
     double production = 0.0;
     
     production = Math.round(SOLAR_RADIATION * THERMAL_EFFICIENCY * PANEL_HEIGHT * PANEL_WIDTH * PANEL_AMOUNT * sunshineHours/ W2KWH * scale)/ scale;
 
-    // Caculate money eq 2 above
+    // Calculate money eq 2 above
     double money = 0.0;
     money = Math.round(production * PRICE * scale) / scale;  
 
