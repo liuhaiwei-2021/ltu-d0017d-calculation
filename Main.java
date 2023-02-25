@@ -57,8 +57,7 @@ class Main {
     userInputDate.useDelimiter("[-/\\s]");
     month = userInputDate.nextInt();
     day = userInputDate.nextInt();
-    userInputDate.close();
-    
+
     // Validate date
     if ((month != JUNE) && (month != JULY)) {
       System.out.print("wrong date");
@@ -81,7 +80,6 @@ class Main {
       userInputSunrise.useDelimiter("[[:|/|\\s]+]");
       sunriseHours = userInputSunrise.nextDouble();
       sunriseMinutes = userInputSunrise.nextDouble();
-      userInputSunrise.close();
     }
 
     // Rounding scale
@@ -99,7 +97,6 @@ class Main {
       userInputSunset.useDelimiter("[[:|/|\\s]+]");
       sunsetHours = userInputSunset.nextDouble();
       sunsetMinutes = userInputSunset.nextDouble();
-      userInputSunset.close();
     } else {
       System.out.print("wrong time");
       System.exit(0);
