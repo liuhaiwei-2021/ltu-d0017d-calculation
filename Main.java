@@ -61,14 +61,19 @@ class Main {
     // Validate date
     if ((month != JUNE) && (month != JULY)) {
       System.out.print("wrong date");
+      System.exit(0);
     } else if ((month == JUNE) && (day < DAY_MIN)) {
       System.out.print("wrong date");
+      System.exit(0);
     } else if ((month == JUNE) && (day > DAYS_IN_JUNE_MAX)) {
       System.out.print("wrong date");
+      System.exit(0);
     } else if ((month == JULY) && (day < DAY_MIN)) {
       System.out.print("wrong date");
+      System.exit(0);
     } else if ((month == JULY) && (day > DAYS_IN_JULY_MAX)) {
       System.out.print("wrong date");
+      System.exit(0);
     } else {
       System.out.print("Enter the time of sunrise [hh: mm]");
       Scanner userInputSunrise = new Scanner(System.in);
@@ -93,27 +98,29 @@ class Main {
       sunsetMinutes = userInputSunset.nextDouble();
     } else {
       System.out.print("wrong time");
+      System.exit(0);
     }
 
     // Validate sunset time
-    if ((sunsetHours >= HOUR_MIN  ) && (sunsetHours <=  HOUR_MAX)) && (sunsetMinutes >= MINUTE_MIN) && (sunsetMinutes <= MINUTE_MAX)) {
+    if ((sunsetHours >= HOUR_MIN  ) && (sunsetHours <=  HOUR_MAX) && (sunsetMinutes >= MINUTE_MIN) && (sunsetMinutes <= MINUTE_MAX)) {
       finalSunsetHours = Math.round((sunsetHours + sunsetMinutes / MINUTES2HOUR) * scale) / scale;
 
     } else {
       System.out.print("wrong time");
+      System.exit(0);     
     }
 
-    // Validate sunrise is before sunset
+    // Validate sunrise is before sunset or not
     if (finalSunriseHours > finalSunsetHours) {
       
      System.out.print("Sunrise is after sunset");
+     System.exit(0);
      } else{
       sunshineHours = Math.round((finalSunsetHours - finalSunriseHours)*scale) / scale ;
      }
 
     //Calculate production, eq 1 above
-    double production = 0.0;
-    
+    double production = 0.0;  
     production = Math.round(SOLAR_RADIATION * THERMAL_EFFICIENCY * PANEL_HEIGHT * PANEL_WIDTH * PANEL_AMOUNT * sunshineHours/ W2KWH * scale)/ scale;
 
     // Calculate money eq 2 above
