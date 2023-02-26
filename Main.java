@@ -57,6 +57,7 @@ class Main {
     userInputDate.useDelimiter("[-/\\s]");
     month = userInputDate.nextInt();
     day = userInputDate.nextInt();
+  
 
     // Validate date
     if ((month != JUNE) && (month != JULY)) {
@@ -76,10 +77,9 @@ class Main {
       System.exit(0);
     } else {
       System.out.print("Enter the time of sunrise [hh: mm]");
-      Scanner userInputSunrise = new Scanner(System.in);
-      userInputSunrise.useDelimiter("[[:|/|\\s]+]");
-      sunriseHours = userInputSunrise.nextDouble();
-      sunriseMinutes = userInputSunrise.nextDouble();
+      userInputDate.useDelimiter("[[:|/|\\s]+]");
+      sunriseHours = userInputDate.nextDouble();
+      sunriseMinutes = userInputDate.nextDouble();
     }
 
     // Rounding scale
@@ -93,10 +93,9 @@ class Main {
       finalSunriseHours = Math.round((sunriseHours + sunriseMinutes / MINUTES2HOUR) * scale) / scale;
 
       System.out.print("Enter the time of sunset [hh: mm]");
-      Scanner userInputSunset = new Scanner(System.in);
-      userInputSunset.useDelimiter("[[:|/|\\s]+]");
-      sunsetHours = userInputSunset.nextDouble();
-      sunsetMinutes = userInputSunset.nextDouble();
+      userInputDate.useDelimiter("[[:|/|\\s]+]");
+      sunsetHours = userInputDate.nextDouble();
+      sunsetMinutes = userInputDate.nextDouble();
     } else {
       System.out.print("wrong time");
       System.exit(0);
@@ -133,8 +132,7 @@ class Main {
     // print formated data
     System.out.printf("%-40s %n", "=========================================");
     System.out.printf("%-10s %-4s %-5s %n", "Sun hours:", sunshineHours, "hours");
-    System.out.printf("%-10s %-2s %-1s %-1s %-4s  %-4s %-10s  %4s %n", "The production on ", day, "/", month, "is: ",
+    System.out.printf("%-10s %-1s %-1s %-1s %-4s  %-4s %-10s  %4s %n", "The production on ", day, "/", month, "is: ",
         production, "kWH to a value of: SEK", money);
-
   }
 }
