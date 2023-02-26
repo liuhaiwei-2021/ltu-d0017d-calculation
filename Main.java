@@ -1,7 +1,7 @@
 /*
 * This program calculates how much money your solar cells generate * per day based on the hours of susnshine.
 * Step 1. Declare all constants
-* Step 2. Declare all varibles hour, minutes, month, day
+* Step 2. Declare all varibles hours, minutes, month, day
 * Step 3. Enter the date
 * Step 4. Validate the date
 * Step 5. Enter the time of sunrise
@@ -10,9 +10,10 @@
 * Step 8. Validate the time of 
 * Step 9. Calculate the sun hours
 * Step 10.Calculate the production 
-* Production (kWh) = Solar radiation (Wh / m2 / hour) x efficiency x surface (m2) x hours of sunshine / 1000
-* Step 11. Calculate money Money = Production * price
-*@Haiwei， haiweiliu
+* production (kWh) = Solar radiation (Wh / m2 / hour) x efficiency x surface (m2) x hours of sunshine / 1000
+* Step 11. Calculate money money = production * price
+*
+* @Haiwei， haiweiliu
 */
 
 import java.util.Scanner;
@@ -95,6 +96,7 @@ class Main {
       userInputDate.useDelimiter("[[:|/|\\s]+]");
       sunsetHours = userInputDate.nextDouble();
       sunsetMinutes = userInputDate.nextDouble();
+      userInputDate.close();
     } else {
       System.out.print("wrong time");
       System.exit(0);
