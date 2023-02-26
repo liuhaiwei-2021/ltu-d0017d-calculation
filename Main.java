@@ -10,9 +10,8 @@
 * Step 8. Validate the time of 
 * Step 9. Calculate the sun hours
 * Step 10.Calculate the production 
-* Production (Wh) = Solar radiation (Wh / m2 / hour) x efficiency x 
-* surface (m2) x hours of sunshine
-* Step 11. Calculate money Money = Production / 1000 * price
+* Production (kWh) = Solar radiation (Wh / m2 / hour) x efficiency x surface (m2) x hours of sunshine / 1000
+* Step 11. Calculate money Money = Production * price
 *@Haiwei， haiweiliu
 */
 
@@ -134,5 +133,6 @@ class Main {
     System.out.printf("%-10s %-4s %-5s %n", "Sun hours:", sunshineHours, "hours");
     System.out.printf("%-10s %-1s %-1s %-1s %-4s  %-4s %-10s  %4s %n", "The production on ", day, "/", month, "is: ",
         production, "kWH to a value of: SEK", money);
+
   }
 }
