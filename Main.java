@@ -61,19 +61,19 @@ class Main {
 
     // Validate date
     if ((month != JUNE) && (month != JULY)) {
-      System.out.print("wrong date");
+      System.out.print("wrong month");
       System.exit(0);
     } else if ((month == JUNE) && (day < DAY_MIN)) {
-      System.out.print("wrong date");
+      System.out.print("wrong day");
       System.exit(0);
     } else if ((month == JUNE) && (day > DAYS_IN_JUNE_MAX)) {
-      System.out.print("wrong date");
+      System.out.print("wrong day");
       System.exit(0);
     } else if ((month == JULY) && (day < DAY_MIN)) {
-      System.out.print("wrong date");
+      System.out.print("wrong day");
       System.exit(0);
     } else if ((month == JULY) && (day > DAYS_IN_JULY_MAX)) {
-      System.out.print("wrong date");
+      System.out.print("wrong day");
       System.exit(0);
     } else {
       System.out.print("Enter the time of sunrise [hh: mm]");
